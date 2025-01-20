@@ -1,10 +1,6 @@
 AStickyHeader
 ==========
 
-<a href='https://ko-fi.com/H2H6BPBP' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
-![AStickyHeader](https://github.com/DWorkS/AStickyHeader/raw/master/header.png)
-
 `AStickyHeader` is a simple library for adding Sticky Headers to `ListView` or `GridView`.
 Usage is very simple, it supports all kinds of Adapters. 
 
@@ -58,7 +54,4 @@ License
 
 
 [1]: https://play.google.com/store/apps/details?id=dev.dworks.apps.anexplorer
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/DWorkS/astickyheader/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

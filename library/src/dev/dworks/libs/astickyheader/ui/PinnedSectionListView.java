@@ -37,7 +37,9 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.SectionIndexer;
 import android.widget.WrapperListAdapter;
+
 import dev.dworks.libs.astickyheader.BuildConfig;
+
 
 /**
  * ListView, which is capable to pin section views at its top while the rest is
@@ -51,7 +53,7 @@ public class PinnedSectionListView extends AutoScrollListView {
 	 * List adapter to be implemented for being used with PinnedSectionListView
 	 * adapter.
 	 */
-	public static interface PinnedSectionListAdapter extends ListAdapter {
+	public interface PinnedSectionListAdapter extends ListAdapter {
 		/**
 		 * This method shall return 'true' if views of given type has to be
 		 * pinned.

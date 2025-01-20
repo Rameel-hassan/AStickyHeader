@@ -1,11 +1,10 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.0"
+    namespace "dev.dworks.libs.astickyheader"
+    compileSdk 34
     defaultConfig {
-        minSdkVersion 8
-        targetSdkVersion 14
+        minSdkVersion 30
     }
     sourceSets {
         main {
