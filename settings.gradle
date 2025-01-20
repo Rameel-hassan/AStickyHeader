@@ -5,7 +5,6 @@ pluginManagement {
         mavenCentral()
         mavenLocal()
         maven { url "https://jitpack.io" }
-
     }
 }
 dependencyResolutionManagement {
@@ -20,4 +19,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AStickyHeader"
 include ':library'
-include ':sample'
