@@ -48,7 +48,7 @@ public class FillerView extends LinearLayout {
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		if(null != mMeasureTarget)
-		heightMeasureSpec = MeasureSpec.makeMeasureSpec(
+			heightMeasureSpec = MeasureSpec.makeMeasureSpec(
 				mMeasureTarget.getMeasuredHeight(), MeasureSpec.EXACTLY);
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}

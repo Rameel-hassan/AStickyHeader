@@ -63,7 +63,6 @@ public class AutoScrollGridView extends GridView {
         requestLayout();
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
     @Override
     protected void layoutChildren() {
         super.layoutChildren();
@@ -114,12 +113,7 @@ public class AutoScrollGridView extends GridView {
                 }
             }
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
-                smoothScrollToPositionFromTop(position, offset);	
-            }
-            else{
             	smoothScrollToPosition(position);
-            }
         }
     }
 }

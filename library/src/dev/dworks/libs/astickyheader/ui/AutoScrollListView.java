@@ -62,7 +62,6 @@ public class AutoScrollListView extends ListView {
         requestLayout();
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB) 
     @Override
     protected void layoutChildren() {
         super.layoutChildren();
@@ -113,12 +112,7 @@ public class AutoScrollListView extends ListView {
                 }
             }
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
-                smoothScrollToPositionFromTop(position, offset);	
-            }
-            else{
             	smoothScrollToPosition(position);
-            }
         }
     }
 }
