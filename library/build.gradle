@@ -1,13 +1,22 @@
-plugins {
-    id 'com.android.library'
-    id 'maven-publish'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
     namespace "dev.dworks.libs.astickyheader"
-    compileSdk 34
+    compileSdk 35
+
     defaultConfig {
         minSdkVersion 30
+        targetSdkVersion 35
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 
     buildFeatures {
@@ -17,11 +26,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    sourceSets {
-        main {
-            manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src']
-            res.srcDirs = ['res']
+
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+// Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.findByName('release')
+                groupId = 'com.github.rameelhassan'
+                artifactId = 'astickyheader'
+                version = '1.1.'
+            }
         }
     }
+}
+dependencies {
+
 }
