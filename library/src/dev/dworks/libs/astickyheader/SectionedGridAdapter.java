@@ -149,7 +149,6 @@ public abstract class SectionedGridAdapter extends BaseAdapter implements Pinned
 				mSections.append(sectionAdd.sectionedPosition, sectionAdd);
 				++offset;
 			}
-
 			sectionAdd = new Section(section.firstPosition, section.title);
 			sectionAdd.type = TYPE_HEADER;
 			sectionAdd.sectionedPosition = sectionAdd.firstPosition + offset;

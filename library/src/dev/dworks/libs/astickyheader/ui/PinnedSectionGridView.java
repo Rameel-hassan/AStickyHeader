@@ -577,7 +577,7 @@ public class PinnedSectionGridView extends AutoScrollGridView {
 
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if (mNumColumns == GridView.AUTO_FIT) {
+		if (mNumColumns == GridView.AUTO_FIT) {
         	mAvailableWidth = MeasureSpec.getSize(widthMeasureSpec);
             if (mColumnWidth > 0) {
             	int availableSpace = MeasureSpec.getSize(widthMeasureSpec) - getPaddingLeft() - getPaddingRight();

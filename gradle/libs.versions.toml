@@ -1,0 +1,14 @@
+[versions]
+agp = "8.8.0"
+gradle = "8.0.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+
+[libraries]
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agp" }
+maven-publish = {id = "maven-publish"}

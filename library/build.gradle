@@ -6,12 +6,18 @@ android {
     compileSdk 35
 
     defaultConfig {
-        minSdkVersion 30
-        targetSdkVersion 35
+        minSdk 30
+        targetSdk 35
         versionCode 1
         versionName "1.0"
-    }
 
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -30,23 +36,40 @@ android {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src']
+            res.srcDirs = ['res']
         }
     }
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-// Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.findByName('release')
-                groupId = 'com.github.rameelhassan'
-                artifactId = 'astickyheader'
-                version = '1.0.8'
+
+// Move the publishing block outside of afterEvaluate
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.rameelhassan'
+            artifactId = 'astickyheader'
+            version = '1.0.9'
+
+            afterEvaluate {
+                from components.release
             }
+        }
+    }
+    repositories {
+        maven {
+            url = uri("$buildDir/local-maven")
+        }
+    }
+}
+task printComponents {
+    doLast {
+        println("Available components:")
+        publishing.publications.each { publication ->
+            println("Publication: ${publication.name}")
         }
     }
 }
 dependencies {
-
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
 }
