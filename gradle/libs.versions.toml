@@ -1,6 +1,6 @@
 [versions]
 agp = "8.8.0"
-gradle = "8.0.0"
+gradle = "8.0.2"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 
@@ -11,4 +11,3 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 
 [plugins]
 android-library = { id = "com.android.library", version.ref = "agp" }
-maven-publish = {id = "maven-publish"}
